@@ -1,0 +1,46 @@
+﻿
+@using WebApplication4.DAL.entities
+@model List<Employee>
+
+@{
+    int mdo = 1;
+    ViewData["Title"] = "Index";
+}
+<table id=menna class="table">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">name</th>
+            <th scope="col">age</th>
+            <th scope="col">IsDeleted</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.age</td>
+                @if (item.IsDeleted)
+                {
+                    <td><p class="bg-danger">Deleted</p></td>
+                }
+                else
+
+                {
+                    <td><p class="bg-succes">Deleted</p></td>
+                }
+            </tr>
+            <p></p>
+            <p></p>
+            <p></p>
+        }
+       
+        </tr>
+    </tbody>
+</table>
+<h1>Index</h1>
+
